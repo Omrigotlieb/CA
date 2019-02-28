@@ -16,7 +16,6 @@ handleNameChange(event) {
 }
 
   render() {
-    const defaultValue = 'New Playlist';
     return (
       <div className="Playlist">
         <input onChange={this.handleNameChange} value={this.props.playlistName}/>
