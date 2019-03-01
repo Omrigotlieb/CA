@@ -8,8 +8,8 @@ class BusinessList extends Component {
   render() {
     return (
       <div className="BusinessList">
-      {this.props.businesses.map((business, i) => {
-        return <Business key={business.name + i} data={business} />
+      {this.props.businesses.map(business => {
+        return <Business key={business.id} data={business} />
       })}
   </div>
     )
