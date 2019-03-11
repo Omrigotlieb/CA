@@ -49,7 +49,7 @@ class App extends Component {
     if (!trackArray.length) {
       const playlistTracks = this.state.playlistTracks ? this.state.playlistTracks : [];
       playlistTracks.push(track);
-      window.localStorage.setItem('playlistTracks', playlistTracks);
+      window.localStorage.setItem('playlistTracks', JSON.stringify(playlistTracks));
       this.setState({ playlistTracks });
     }
   }
@@ -86,7 +86,6 @@ class App extends Component {
 
   componentDidMount() {
     Spotify.getAccessToken();
-
     let playlistTracks = window.localStorage.getItem('playlistTracks');
     if(playlistTracks) {
       playlistTracks = JSON.parse(playlistTracks);
